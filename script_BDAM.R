@@ -117,11 +117,12 @@ dados_bd3 = read.csv(file = "banco 3 SIDRA.csv",
 str(dados_bd3)
 head(dados_bd3)
 
-# Ao terminar a Tarefa 1 commit com a mensagem " script - tarefa 1" e envie para o repositório Treino_Extensao
-
+#Ao terminar a Tarefa 1 commit com a mensagem " script - tarefa 1" e envie para o repositório Treino_Extensao
 
 # Tarefa 2: Manipulação dos dados
 # Criar a variável MUNICIPIOS = MUNICIPIO em dados_bd3, sendo que agora com 6 dígitos (em vez de 7 dígitos), desprezando o último dígito verificador
+
+dados_bd3$MUNICIPIOS = substr(dados_bd3$MUNICIPIO, 1 ,6)
 
 # Ao terminar a Tarefa 2 commit com a mensagem " script - tarefa 1 a 2" e envie para o repositório Treino_Extensao
 
