@@ -163,7 +163,8 @@ write.csv(BANCO3_RJ, "BANCO3_RJ.csv", row.names = F)
 # códigos dos municípios - 2010.csv" com os códigos do IBGE para os municípios do Brasil
 
 dados_bd4 = read.csv("banco 4 ATLAS.csv",
-                     sep = ";")
+                     sep = ";",
+                     fileEncoding = "latin1")
 
 codigos = read.csv("códigos dos municípios - 2010.csv",
                    sep = ";")
@@ -182,6 +183,12 @@ str(codigos)
 # Tarefa 2: Manipulação dos dados
 # Criar uma nova variável em dados_bd4 MUNICIPIOS atribuindo os códigos dos municípios, de forma a ficar
 # coerente com os nomes dos municipios e códigos IBGE
+
+#Criando um auxiliar sem o (RJ)
+nomes_muni = trimws(sub("\\([A-Z]{2}\\)$","",dados_bd4$MUNICIPIO))
+
+#Adicionando a variável com os códigos de município
+dados_bd4$MUNICIPIOS = codigos$CODMUNRES[match(nomes_muni, codigos$município)]
 
 # Ao terminar a Tarefa 2 commit com a mensagem " script - tarefa 1 a 2" e envie para o repositório Treino_Extensao
 
