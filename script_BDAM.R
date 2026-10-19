@@ -296,6 +296,10 @@ str(BANCO5_RJ)
 
 # Tarefa 4: Exportar o banco de dados BANCO5_RJ com o nome BANCO5_RJ.csv
 
+write.csv(BANCO5_RJ,
+          "BANCO5_RJ.csv",
+          row.names = F)
+
 # Ao terminar a Tarefa 4 commit com a mensagem "dados e script - Etapa 5" e envie para o repositório Treino_Extensao
 
 
