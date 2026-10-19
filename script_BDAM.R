@@ -235,6 +235,13 @@ write.csv(BANCO4_RJ, "BANCO4_RJ.csv", row.names = F)
 # Tarefa 1: Leitura do banco de dados banco 5 = SINISA.csv com o nome de dados_bd5 
 # Ler os arquivos, verificar estruturas dos dados e dar uma olhada nos dados
 
+dados_bd5 = read.csv(file = "banco 5 SINISA.csv",
+                     sep = ";",
+                     dec = ",")
+
+head(dados_bd5)
+str(dados_bd5)
+
 # Ao terminar a Tarefa 1 commit com a mensagem " script - tarefa 1" e envie para o repositório Treino_Extensao
 
 
