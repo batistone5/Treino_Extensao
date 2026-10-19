@@ -269,6 +269,28 @@ str(dados_bd5)
 # NCR: número de carros registrados
 # NMR: número de motos registradas
 
+linha_estado = data.frame(
+  ANO = 2025,
+  NIVEL = "UF",
+  CODIGO = 33,
+  NCR = sum(dados_bd5$NUM_CARROS_REGISTRADOS,na.rm = T),
+  NMR = sum(dados_bd5$NUM_MOTOS_REGISTRADAS,na.rm = T)
+)
+
+linhas_municipios = data.frame(
+  ANO = 2025,
+  NIVEL = "MUNICIPIO",
+  CODIGO = dados_bd5$MUNICIPIO,
+  NCR = dados_bd5$NUM_CARROS_REGISTRADOS,
+  NMR = dados_bd5$NUM_MOTOS_REGISTRADAS
+)
+
+BANCO5_RJ = rbind(linha_estado,
+                  linhas_municipios)
+
+head(BANCO5_RJ)
+str(BANCO5_RJ)
+
 # Ao terminar a Tarefa 3 commit com a mensagem " script - tarefa 1 a 3" e envie para o repositório Treino_Extensao
 
 
